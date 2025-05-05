@@ -31,22 +31,6 @@ A clean, responsive React-based dashboard to search, filter, and explore student
 
 ---
 
-## 📁 Folder Structure
-
-student-test-portal/
-├── public/
-├── src/
-│ ├── components/
-│ ├── App.jsx
-│ └── main.jsx
-├── tailwind.config.js
-├── postcss.config.js
-├── index.html
-├── package.json
-└── README.md
-
-
----
 
 ## 🧠 Approach
 
