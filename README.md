@@ -4,13 +4,6 @@ A clean, responsive React-based dashboard to search, filter, and explore student
 
 ---
 
-## 🚀 Live Demo
-
-🔗 [Live Project on Vercel]([https://your-vercel-deployment-link.vercel.app](https://student-test-portal.vercel.app/))
-
-📂 [Source Code on GitHub]([https://github.com/your-username/student-test-portal](https://github.com/Ankit1017/student-test-portal))
-
----
 
 ## ✨ Features
 
