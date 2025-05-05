@@ -1,0 +1,335 @@
+/* Import Tailwind & Animation Plugin */
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*===============================
+=           VARIABLES           =
+================================*/
+:root {
+  --font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+
+  /* Backgrounds */
+  --bg-color: #f9fafb;               /* Light gray background */
+  --container-bg: #ffffff;           /* Card/panel white */
+
+  /* Table Headers */
+  --table-header-bg: #2563eb;        /* Vibrant blue (Tailwind blue-600) */
+  --table-header-text: #ffffff;      /* White text on headers */
+
+  /* Table Rows & Borders */
+  --table-row-hover: #eff6ff;        /* Soft blue hover (Tailwind blue-50) */
+  --table-cell-border: #e5e7eb;      /* Soft gray (Tailwind gray-200) */
+
+  /* Text Colors */
+  --text-main: #1f2937;              /* Dark gray (Tailwind gray-800) */
+  --text-light: #ffffff;             /* White for contrast */
+
+  /* Buttons */
+  --button-bg: #3b82f6;              /* Primary blue (Tailwind blue-500) */
+  --button-hover-bg: #1d4ed8;        /* Darker blue (Tailwind blue-700) */
+
+  /* Font Sizes */
+  --font-sm: 1rem;
+  --font-md: 1.125rem;
+  --font-lg: 1.375rem;
+  --font-xl: 2rem;
+  --font-xxl: 3rem;
+}
+
+
+/*===============================
+=        GLOBAL RESET          =
+================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--font-family);
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+/*===============================
+=           CONTAINER          =
+================================*/
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  background-color: var(--container-bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/*===============================
+=           TABLE              =
+================================*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th {
+  background-color: var(--table-header-bg);
+  color: var(--table-header-text);
+  font-weight: bold;
+  padding: 20px;
+  font-size: var(--font-lg);
+  text-align: left;
+  border-bottom: 2px solid var(--table-cell-border);
+}
+
+td {
+  padding: 16px 32px;
+  font-size: var(--font-md);
+  text-align: center;
+  border-bottom: 1px solid var(--table-cell-border);
+}
+
+tbody tr {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+  background-color: var(--table-row-hover);
+}
+
+/*===============================
+=          PAGINATION          =
+================================*/
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 1rem;
+}
+
+.pagination button {
+  background-color: var(--button-bg);
+  color: var(--text-light);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center; /* centers the buttons horizontally */
+  align-items: center;      /* centers the buttons vertically */
+  gap: 1rem;                /* space between buttons */
+  margin-top: 2rem;
+}
+
+.pagination button {
+  background-color: var(--button-bg);
+  color: var(--text-light);
+  padding: 0.75rem 1.5rem;
+  font-size: var(--font-md);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+
+/*===============================
+=           HEADINGS           =
+================================*/
+h1 {
+  text-align: center;
+  font-size: var(--font-xxl);
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-main);
+}
+
+/*===============================
+=         STUDENT INFO         =
+================================*/
+.student-info {
+  background-color: var(--container-bg);
+  padding: 2rem;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: var(--font-sm);
+}
+
+.student-info h2 {
+  font-size: var(--font-xl);
+  margin-bottom: 10px;
+}
+
+.student-info p {
+  margin: 10px 0;
+}
+
+/*===============================
+=      RESPONSIVE DESIGN       =
+================================*/
+@media (max-width: 768px) {
+  table {
+    font-size: var(--font-sm);
+  }
+
+  h1 {
+    font-size: var(--font-xl);
+  }
+
+  .pagination button {
+    padding: 8px 16px;
+  }
+}
+
+/*===============================
+=   TAILWIND UTILITY PATCHES   =
+================================*/
+.text-xl {
+  font-size: var(--font-lg);
+}
+
+.text-2xl {
+  font-size: var(--font-xl);
+}
+
+.text-3xl {
+  font-size: var(--font-xxl);
+}
+
+.bg-blue-500 {
+  background-color: var(--button-bg);
+}
+
+.bg-blue-600 {
+  background-color: var(--button-hover-bg);
+}
+
+.text-white {
+  color: var(--text-light);
+}
+
+
+/* Modal Background Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(55, 65, 81, 0.5); /* Tailwind's gray-700 with 50% opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+/* Modal Card */
+.modal-card {
+  width: 24rem; /* Equivalent to Tailwind w-96 */
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.modal-card h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1f2937; /* Tailwind's gray-800 */
+}
+
+/* Paragraphs */
+.modal-card p {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #374151; /* Tailwind's gray-700 */
+}
+
+/* Strong labels */
+.modal-card p strong {
+  font-size: 1.125rem; /* text-lg */
+  color: #374151;
+}
+
+/* Close Button */
+.modal-card button {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #dc2626; /* Tailwind's red-600 */
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-card button:hover {
+  background-color: #b91c1c; /* Tailwind's red-700 */
+}
+
+
+/* Search Input Container */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+/* Search Input Box */
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border: 2px solid #4a90e2;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  color: #333333;
+  background-color: #f9f9f9;
+}
+
+/* Placeholder color */
+.search-input::placeholder {
+  color: #888888;
+}
+
+/* Focus state */
+.search-input:focus {
+  border-color: #357ab7;
+  box-shadow: 0 0 0 3px rgba(53, 122, 183, 0.3);
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 500px;
+  height: 250px;
+  margin: 0 auto;
+}
+
